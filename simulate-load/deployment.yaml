@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: app1
+  name: simulate-load
   labels:
     owner: org1
-    app: app1
+    app: simulate-load
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: app1
+      app: simulate-load
   template:
     metadata:
       labels:
-        app: app1
+        app: simulate-load
     spec:
       containers:
-      - name: app1
+      - name: simulate-load
         image: quay.io/alegros/simulate-load
         ports:
         - containerPort: 8080

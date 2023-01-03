@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hostname
+  labels:
+    owner: org2
+    app: hostname
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hostname
+  template:
+    metadata:
+      labels:
+        app: hostname
+    spec:
+      containers:
+      - name: hostname
+        image: quay.io/alegros/hostname
+        ports:
+        - containerPort: 8080

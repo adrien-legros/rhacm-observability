@@ -1,10 +1,10 @@
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
-  name: simulate-load
+  name: hostname
 spec:
   port:
     targetPort: 8080 
   to:
     kind: Service
-    name: simulate-load
+    name: hostname
